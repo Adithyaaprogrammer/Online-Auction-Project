@@ -12,17 +12,19 @@ def intro():
 @app.route("/user", methods=["GET", "POST"])
 def user():
     if request.methods =="POST":
-        username = request.form["username"]
+        user_id = request.form["user_id"]
         password = request.form["password"]
+        
 
-    else:    
+
+    elif request.methods =="GET":    
         return render_template("user.html")
 @app.route("/admin", methods=["GET", "POST"]) 
 def admin():
     if request.methods =="POST":
         username = request.form["username"]
         password = request.form["password"]
-    else:
+    elif request.methods =="GET":
         return render_template("admin.html")
 
 
